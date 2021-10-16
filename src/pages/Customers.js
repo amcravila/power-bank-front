@@ -1,43 +1,42 @@
 import { filter } from 'lodash';
-import { Icon } from '@iconify/react';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
-import plusFill from '@iconify/icons-eva/plus-fill';
-import { Link as RouterLink } from 'react-router-dom';
 // material
 import {
   Card,
   Table,
   Stack,
   Avatar,
-  Button,
-  Checkbox,
   TableRow,
   TableBody,
   TableCell,
   Container,
   Typography,
   TableContainer,
-  TablePagination
+  TablePagination,
 } from '@mui/material';
 // components
 import Page from '../components/Page';
 import Label from '../components/Label';
 import Scrollbar from '../components/Scrollbar';
 import SearchNotFound from '../components/SearchNotFound';
-import { UserListHead, UserListToolbar, UserMoreMenu } from '../components/_dashboard/user';
+import {
+  UserListHead,
+  UserListToolbar,
+  UserMoreMenu,
+} from '../components/_dashboard/customers';
 //
-import USERLIST from '../_mocks_/user';
+import USERLIST from '../_mocks_/customers';
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
-  { id: '' }
+  { id: 'name', label: 'Nome', alignRight: false },
+  { id: 'company', label: 'Empresa', alignRight: false },
+  { id: 'role', label: 'Ocupação', alignRight: false },
+  { id: 'isVerified', label: 'Verificado', alignRight: false },
+  { id: 'status', label: 'Status da Conta', alignRight: false },
+  { id: '' },
 ];
 
 // ----------------------------------------------------------------------
@@ -66,7 +65,10 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
   if (query) {
-    return filter(array, (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return filter(
+      array,
+      (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+    );
   }
   return stabilizedThis.map((el) => el[0]);
 }
@@ -125,32 +127,33 @@ export default function User() {
     setFilterName(event.target.value);
   };
 
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
 
-  const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
+  const filteredUsers = applySortFilter(
+    USERLIST,
+    getComparator(order, orderBy),
+    filterName
+  );
 
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <Page title="User | Minimal-UI">
+    <Page title='Carteira de Clientes'>
       <Container>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-          <Typography variant="h4" gutterBottom>
-            User
+        <Stack
+          direction='row'
+          alignItems='center'
+          justifyContent='space-between'
+          mb={5}
+        >
+          <Typography variant='h4' gutterBottom>
+            Carteira de Clientes
           </Typography>
-          <Button
-            variant="contained"
-            component={RouterLink}
-            to="#"
-            startIcon={<Icon icon={plusFill} />}
-          >
-            New User
-          </Button>
         </Stack>
 
         <Card>
           <UserListToolbar
-            numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
           />
@@ -171,7 +174,15 @@ export default function User() {
                   {filteredUsers
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => {
-                      const { id, name, role, status, company, avatarUrl, isVerified } = row;
+                      const {
+                        id,
+                        name,
+                        role,
+                        status,
+                        company,
+                        avatarUrl,
+                        isVerified,
+                      } = row;
                       const isItemSelected = selected.indexOf(name) !== -1;
 
                       return (
@@ -179,37 +190,46 @@ export default function User() {
                           hover
                           key={id}
                           tabIndex={-1}
-                          role="checkbox"
-                          selected={isItemSelected}
-                          aria-checked={isItemSelected}
+                          // role='checkbox'
+                          // selected={isItemSelected}
+                          // aria-checked={isItemSelected}
+                          onClick={() => console.log('clicou')}
                         >
-                          <TableCell padding="checkbox">
-                            <Checkbox
+                          <TableCell padding='checkbox'>
+                            {/* <Checkbox
                               checked={isItemSelected}
                               onChange={(event) => handleClick(event, name)}
-                            />
+                            /> */}
                           </TableCell>
-                          <TableCell component="th" scope="row" padding="none">
-                            <Stack direction="row" alignItems="center" spacing={2}>
+                          <TableCell component='th' scope='row' padding='none'>
+                            <Stack
+                              direction='row'
+                              alignItems='center'
+                              spacing={2}
+                            >
                               <Avatar alt={name} src={avatarUrl} />
-                              <Typography variant="subtitle2" noWrap>
+                              <Typography variant='subtitle2' noWrap>
                                 {name}
                               </Typography>
                             </Stack>
                           </TableCell>
-                          <TableCell align="left">{company}</TableCell>
-                          <TableCell align="left">{role}</TableCell>
-                          <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
-                          <TableCell align="left">
+                          <TableCell align='left'>{company}</TableCell>
+                          <TableCell align='left'>{role}</TableCell>
+                          <TableCell align='left'>
+                            {isVerified ? 'Sim' : 'Não'}
+                          </TableCell>
+                          <TableCell align='left'>
                             <Label
-                              variant="ghost"
-                              color={(status === 'banned' && 'error') || 'success'}
+                              variant='ghost'
+                              color={
+                                (status === 'pendente' && 'error') || 'success'
+                              }
                             >
                               {sentenceCase(status)}
                             </Label>
                           </TableCell>
 
-                          <TableCell align="right">
+                          <TableCell align='right'>
                             <UserMoreMenu />
                           </TableCell>
                         </TableRow>
@@ -224,7 +244,7 @@ export default function User() {
                 {isUserNotFound && (
                   <TableBody>
                     <TableRow>
-                      <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
+                      <TableCell align='center' colSpan={6} sx={{ py: 3 }}>
                         <SearchNotFound searchQuery={filterName} />
                       </TableCell>
                     </TableRow>
@@ -236,7 +256,7 @@ export default function User() {
 
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
-            component="div"
+            component='div'
             count={USERLIST.length}
             rowsPerPage={rowsPerPage}
             page={page}

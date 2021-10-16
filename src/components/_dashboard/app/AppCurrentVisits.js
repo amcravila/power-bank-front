@@ -18,15 +18,15 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
   marginTop: theme.spacing(5),
   '& .apexcharts-canvas svg': { height: CHART_HEIGHT },
   '& .apexcharts-canvas svg,.apexcharts-canvas foreignObject': {
-    overflow: 'visible'
+    overflow: 'visible',
   },
   '& .apexcharts-legend': {
     height: LEGEND_HEIGHT,
     alignContent: 'center',
     position: 'relative !important',
     borderTop: `solid 1px ${theme.palette.divider}`,
-    top: `calc(${CHART_HEIGHT - LEGEND_HEIGHT}px) !important`
-  }
+    top: `calc(${CHART_HEIGHT - LEGEND_HEIGHT}px) !important`,
+  },
 }));
 
 // ----------------------------------------------------------------------
@@ -41,9 +41,9 @@ export default function AppCurrentVisits() {
       theme.palette.primary.main,
       theme.palette.info.main,
       theme.palette.warning.main,
-      theme.palette.error.main
+      theme.palette.error.main,
     ],
-    labels: ['America', 'Asia', 'Europe', 'Africa'],
+    labels: ['Ações', 'Imobiliários', 'Multimercado', 'Cambiais'],
     stroke: { colors: [theme.palette.background.paper] },
     legend: { floating: true, horizontalAlign: 'center' },
     dataLabels: { enabled: true, dropShadow: { enabled: false } },
@@ -52,20 +52,25 @@ export default function AppCurrentVisits() {
       y: {
         formatter: (seriesName) => fNumber(seriesName),
         title: {
-          formatter: (seriesName) => `#${seriesName}`
-        }
-      }
+          formatter: (seriesName) => `#${seriesName}`,
+        },
+      },
     },
     plotOptions: {
-      pie: { donut: { labels: { show: false } } }
-    }
+      pie: { donut: { labels: { show: false } } },
+    },
   });
 
   return (
     <Card>
-      <CardHeader title="Current Visits" />
-      <ChartWrapperStyle dir="ltr">
-        <ReactApexChart type="pie" series={CHART_DATA} options={chartOptions} height={280} />
+      <CardHeader title='Fundos Aplicados' />
+      <ChartWrapperStyle dir='ltr'>
+        <ReactApexChart
+          type='pie'
+          series={CHART_DATA}
+          options={chartOptions}
+          height={280}
+        />
       </ChartWrapperStyle>
     </Card>
   );
