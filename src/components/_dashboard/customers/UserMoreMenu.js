@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import editFill from '@iconify/icons-eva/edit-fill';
 import { Link as RouterLink } from 'react-router-dom';
 import trash2Outline from '@iconify/icons-eva/trash-2-outline';
-import flipfill from '@iconify/icons-eva/flip-fill';
+import messageSquareOutline from '@iconify/icons-eva/message-square-outline';
 import moreVerticalFill from '@iconify/icons-eva/more-vertical-fill';
 // material
 import {
@@ -36,16 +36,6 @@ export default function UserMoreMenu() {
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <MenuItem sx={{ color: 'text.secondary' }}>
-          <ListItemIcon>
-            <Icon icon={trash2Outline} width={24} height={24} />
-          </ListItemIcon>
-          <ListItemText
-            primary='Excluir'
-            primaryTypographyProps={{ variant: 'body2' }}
-          />
-        </MenuItem>
-
         <MenuItem
           component={RouterLink}
           to='#'
@@ -65,7 +55,7 @@ export default function UserMoreMenu() {
           sx={{ color: 'text.secondary' }}
         >
           <ListItemIcon>
-            <Icon icon={flipfill} width={24} height={24} />
+            <Icon icon={messageSquareOutline} width={24} height={24} />
           </ListItemIcon>
           <ListItemText
             primary='Chat'

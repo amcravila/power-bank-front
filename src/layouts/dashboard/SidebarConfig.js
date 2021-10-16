@@ -3,6 +3,7 @@ import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
 import peopleFill from '@iconify/icons-eva/people-fill';
 import shoppingBagFill from '@iconify/icons-eva/shopping-bag-fill';
 import fileTextFill from '@iconify/icons-eva/file-text-fill';
+import messageSquareFill from '@iconify/icons-eva/message-square-fill';
 
 // ----------------------------------------------------------------------
 
@@ -25,13 +26,13 @@ const sidebarConfig = [
     icon: getIcon(shoppingBagFill),
   },
   {
-    title: 'perfil',
-    path: '/dashboard/profile',
-    icon: getIcon(fileTextFill),
-  },
-  {
     title: 'chat',
     path: '/dashboard/chat',
+    icon: getIcon(messageSquareFill),
+  },
+  {
+    title: 'perfil',
+    path: '/dashboard/profile',
     icon: getIcon(fileTextFill),
   },
 ];
