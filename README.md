@@ -4,6 +4,10 @@
 
 Projeto desenvolvido para o evento HACKTUDO 2021 - HACKATHON BNY MELLON
 
+## 💻 Link da Aplicação
+
+[Power Bank](https://competent-perlman-293666.netlify.app/dashboard/app)
+
 ## 🚀 Começando
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
