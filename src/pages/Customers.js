@@ -96,24 +96,6 @@ export default function User() {
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected = [];
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-    setSelected(newSelected);
-  };
-
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -183,24 +165,15 @@ export default function User() {
                         avatarUrl,
                         isVerified,
                       } = row;
-                      const isItemSelected = selected.indexOf(name) !== -1;
 
                       return (
                         <TableRow
                           hover
                           key={id}
                           tabIndex={-1}
-                          // role='checkbox'
-                          // selected={isItemSelected}
-                          // aria-checked={isItemSelected}
                           onClick={() => console.log('clicou')}
                         >
-                          <TableCell padding='checkbox'>
-                            {/* <Checkbox
-                              checked={isItemSelected}
-                              onChange={(event) => handleClick(event, name)}
-                            /> */}
-                          </TableCell>
+                          <TableCell padding='checkbox'></TableCell>
                           <TableCell component='th' scope='row' padding='none'>
                             <Stack
                               direction='row'

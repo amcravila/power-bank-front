@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import { Box, Card, Link, Typography, Stack } from '@mui/material';
-import { styled } from '@mui/material/styles';
 // utils
 import { fCurrency } from '../../../utils/formatNumber';
 //
@@ -14,7 +13,7 @@ ShopProductCard.propTypes = {
 };
 
 export default function ShopProductCard({ product }) {
-  const { name, cover, price, colors, status } = product;
+  const { name, price, colors, status } = product;
 
   return (
     <Card>
