@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/power-bank-front/static/js/main.390a1224.chunk.js",
+    "main.js.map": "/power-bank-front/static/js/main.390a1224.chunk.js.map",
+    "runtime-main.js": "/power-bank-front/static/js/runtime-main.1feefed4.js",
+    "runtime-main.js.map": "/power-bank-front/static/js/runtime-main.1feefed4.js.map",
+    "static/css/2.fe61e19b.chunk.css": "/power-bank-front/static/css/2.fe61e19b.chunk.css",
+    "static/js/2.a311bfb0.chunk.js": "/power-bank-front/static/js/2.a311bfb0.chunk.js",
+    "static/js/2.a311bfb0.chunk.js.map": "/power-bank-front/static/js/2.a311bfb0.chunk.js.map",
+    "static/js/3.c176e2dc.chunk.js": "/power-bank-front/static/js/3.c176e2dc.chunk.js",
+    "static/js/3.c176e2dc.chunk.js.map": "/power-bank-front/static/js/3.c176e2dc.chunk.js.map",
+    "index.html": "/power-bank-front/index.html",
+    "static/css/2.fe61e19b.chunk.css.map": "/power-bank-front/static/css/2.fe61e19b.chunk.css.map",
+    "static/js/2.a311bfb0.chunk.js.LICENSE.txt": "/power-bank-front/static/js/2.a311bfb0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1feefed4.js",
+    "static/css/2.fe61e19b.chunk.css",
+    "static/js/2.a311bfb0.chunk.js",
+    "static/js/main.390a1224.chunk.js"
+  ]
+}
