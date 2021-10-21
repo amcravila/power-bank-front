@@ -1,6 +1,4 @@
 import faker from 'faker';
-// utils
-import { mockImgProduct } from '../utils/mockImages';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +46,6 @@ const products = [...Array(24)].map((_, index) => {
 
   return {
     id: faker.datatype.uuid(),
-    cover: mockImgProduct(setIndex),
     name: PRODUCT_NAME[index],
     price: faker.datatype.number({ min: 4, max: 99, precision: 0.01 }),
     priceSale:

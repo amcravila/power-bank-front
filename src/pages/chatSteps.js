@@ -20,7 +20,11 @@ export default [
   {
     id: '4',
     options: [
-      { value: 'Sim', label: 'Quero compartilhar meus dados', trigger: '5' },
+      {
+        value: 'Sim',
+        label: 'Quero compartilhar meus dados',
+        trigger: '5',
+      },
       { value: 'Não', label: 'Quero enviar os documentos', trigger: '5' },
     ],
   },
@@ -37,6 +41,8 @@ export default [
       { value: 'Brad', label: 'Bradesco', trigger: '7' },
       { value: 'Sant', label: 'Santander', trigger: '7' },
       { value: 'BB', label: 'Banco do Brasil', trigger: '7' },
+      { value: 'Caixa', label: 'Caixa', trigger: '7' },
+      { value: 'NU', label: 'Nubank', trigger: '7' },
     ],
   },
   {
@@ -80,30 +86,42 @@ export default [
   {
     id: '13',
     message:
-      'OK! Estamos avisando ao Itaú que você deseja compartilhar essas informações.',
+      'OK! Estamos avisando ao seu banco que você deseja compartilhar essas informações.',
     trigger: '14',
   },
   {
     id: '14',
     message:
-      'Para darmos continuidade no compartilhamento dos dados, você precisa acessar a sua conta do Itaú e confirmar quais categorias de dados você vai compartilhar.',
+      'Para darmos continuidade no compartilhamento dos dados, você precisa acessar a sua conta do banco e confirmar quais categorias de dados você vai compartilhar.',
     trigger: '15',
   },
   {
     id: '15',
-    message: 'Clique aqui para ser redirecionado a Área de Login do Itaú',
-    trigger: '16',
+    component: (
+      <button>
+        <a
+          href='/dashboard/participants'
+          style={{
+            backgroundColor: '#C8FACD',
+            color: '#000000',
+            textDecoration: 'none',
+          }}
+        >
+          Acessar Área de Login do seu banco
+        </a>
+      </button>
+    ),
   },
   {
     id: '16',
     message:
-      'Oi, Investidor! Ainda estamos aguardando a sua confirmação dos dados no Itaú para continuar a abertura da sua conta. Não se esqueça de acessar sua conta do Itaú e confirmar o compartilhamento dos dados.',
+      'Oi, Investidor! Ainda estamos aguardando a sua confirmação dos dados no seu banco para continuar a abertura da sua conta. Não se esqueça de acessar a conta no seu banco e confirmar o compartilhamento dos dados.',
     trigger: '17',
   },
   {
     id: '17',
     message:
-      'Oi, Investidor! Acabamos de receber do Itaú os seus Dados Cadastrais e podemos continuar a abertura da sua conta.',
+      'Oi, Investidor! Acabamos de receber do seu banco os seus Dados Cadastrais e podemos continuar a abertura da sua conta.',
     trigger: '18',
   },
   {
@@ -115,7 +133,7 @@ export default [
     id: '19',
     options: [
       { value: '6', label: 'LTDA', trigger: '20' },
-      { value: '12', label: 'EIREILI', trigger: '20' },
+      { value: '12', label: 'EIRELI', trigger: '20' },
     ],
   },
   {

@@ -1,9 +1,15 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link as RouterLink } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
+import { Hidden, Box, AppBar, Toolbar, IconButton } from '@mui/material';
 //
 import DashboardSidebar from './DashboardSidebar';
+import PieChartIcon from '@material-ui/icons/PieChart';
+import ChatIcon from '@material-ui/icons/Chat';
+import GroupIcon from '@material-ui/icons/Group';
+import LocalMallIcon from '@material-ui/icons/LocalMall';
+import LanguageIcon from '@material-ui/icons/Language';
 
 // ----------------------------------------------------------------------
 
@@ -40,6 +46,62 @@ export default function DashboardLayout() {
         isOpenSidebar={open}
         onCloseSidebar={() => setOpen(false)}
       />
+      <Hidden lgUp>
+        <Box display='flex' sx={{ flexGrow: 1 }}>
+          <AppBar position='static'>
+            <Toolbar sx={{ mt: 3 }}>
+              <IconButton
+                edge='start'
+                color='inherit'
+                component={RouterLink}
+                to='/dashboard/app'
+              >
+                <PieChartIcon />
+              </IconButton>
+            </Toolbar>
+            <Toolbar>
+              <IconButton
+                edge='start'
+                color='inherit'
+                component={RouterLink}
+                to='/dashboard/chat'
+              >
+                <ChatIcon />
+              </IconButton>
+            </Toolbar>
+            <Toolbar>
+              <IconButton
+                edge='start'
+                color='inherit'
+                component={RouterLink}
+                to='/dashboard/customers'
+              >
+                <GroupIcon />
+              </IconButton>
+            </Toolbar>
+            <Toolbar>
+              <IconButton
+                edge='start'
+                color='inherit'
+                component={RouterLink}
+                to='/dashboard/products'
+              >
+                <LocalMallIcon />
+              </IconButton>
+            </Toolbar>
+            <Toolbar>
+              <IconButton
+                edge='start'
+                color='inherit'
+                component={RouterLink}
+                to='/dashboard/participants'
+              >
+                <LanguageIcon />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+        </Box>
+      </Hidden>
       <MainStyle>
         <Outlet />
       </MainStyle>

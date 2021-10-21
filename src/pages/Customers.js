@@ -167,12 +167,7 @@ export default function User() {
                       } = row;
 
                       return (
-                        <TableRow
-                          hover
-                          key={id}
-                          tabIndex={-1}
-                          onClick={() => console.log('clicou')}
-                        >
+                        <TableRow hover key={id} tabIndex={-1}>
                           <TableCell padding='checkbox'></TableCell>
                           <TableCell component='th' scope='row' padding='none'>
                             <Stack

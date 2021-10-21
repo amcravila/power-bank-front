@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import Profile from './pages/Profile';
 import Customers from './pages/Customers';
 import Chat from './pages/Chat';
+import Participants from './pages/Participants';
 
 // ----------------------------------------------------------------------
 
@@ -23,6 +24,7 @@ export default function Router() {
         { path: 'products', element: <Products /> },
         { path: 'profile', element: <Profile /> },
         { path: 'chat', element: <Chat /> },
+        { path: 'participants', element: <Participants /> },
       ],
     },
     {
