@@ -4,7 +4,6 @@
   "licence": "MIT",
   "version": "1.2.0",
   "private": false,
-  "homepage": "http://amcravila.github.io/power-bank-front",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
