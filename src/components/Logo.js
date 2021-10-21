@@ -12,7 +12,7 @@ export default function Logo({ sx }) {
   return (
     <Box
       component='img'
-      src='/static/logo.png'
+      src='/static/logo_plugai.png'
       sx={{ width: 220, height: 80, ...sx }}
     />
   );

@@ -13,7 +13,6 @@ import { styled } from '@mui/material/styles';
 // components
 import Page from '../components/Page';
 //
-import api from '../services/api';
 import participants from '../_mocks_/participants';
 
 // ----------------------------------------------------------------------

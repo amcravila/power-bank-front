@@ -47,7 +47,7 @@ export default function DashboardLayout() {
         onCloseSidebar={() => setOpen(false)}
       />
       <Hidden lgUp>
-        <Box display='flex' sx={{ flexGrow: 1 }}>
+        <Box display='flex'>
           <AppBar position='static'>
             <Toolbar sx={{ mt: 3 }}>
               <IconButton
