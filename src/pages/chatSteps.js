@@ -97,20 +97,22 @@ export default [
   },
   {
     id: '15',
-    component: (
-      <button>
-        <a
-          href='/dashboard/participants'
-          style={{
-            backgroundColor: '#C8FACD',
-            color: '#000000',
-            textDecoration: 'none',
-          }}
-        >
-          Acessar Área de Login do seu banco
-        </a>
-      </button>
-    ),
+    message: 'Acessar Área de Login do seu banco',
+    trigger: '16',
+    // component: (
+    //   <button>
+    //     <a
+    //       href='/dashboard/participants'
+    //       style={{
+    //         backgroundColor: '#C8FACD',
+    //         color: '#000000',
+    //         textDecoration: 'none',
+    //       }}
+    //     >
+    //       Acessar Área de Login do seu banco
+    //     </a>
+    //   </button>
+    // ),
   },
   {
     id: '16',
